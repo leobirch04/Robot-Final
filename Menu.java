@@ -99,21 +99,6 @@ public class Menu implements Behavior{
 				shared.setSelect(arrowPosition);
 			}
 			
-			if(shared.getSelect() == 6) {
-				shared.setSelect(6);
-				LCD.clear();
-				zAxis.rotate(-340);
-				break;
-			}
-			
-			if(shared.getSelect() == 7) {
-				running = false;
-	            arbitrator.stop(); // Stop the Arbitrator
-	            LCD.clear();
-	            LCD.drawString("Program Ended", 0, 0);
-	            LCD.refresh();
-	            Delay.msDelay(2000);
-			}
 			// option 1 move x-axis
 			while(shared.getSelect() == 1) {
 				LCD.clear();
@@ -229,6 +214,23 @@ public class Menu implements Behavior{
 					
 					calibrating = false;
 				}
+				
+				if(shared.getSelect() == 6) {
+					shared.setSelect(6);
+					LCD.clear();
+					zAxis.rotate(-340);
+					break;
+				}
+				
+				if(shared.getSelect() == 7) {
+					running = false;
+		            arbitrator.stop(); // Stop the Arbitrator
+		            LCD.clear();
+		            LCD.drawString("Program Ended", 0, 0);
+		            LCD.refresh();
+		            Delay.msDelay(2000);
+				}
+				
 				if(Button.ESCAPE.isDown()) {
 					shared.setSelect(0); // returns to main menu
 				}
