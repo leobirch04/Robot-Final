@@ -30,7 +30,7 @@ public class CreateLine {
 		y=numbers[8]*100;
 		for (float i = 0 ; i < (2*Math.PI); i+=((2*Math.PI)/360)) {
 			double r = ((a * Math.pow(Math.sin(b*i+c),d) + (e * Math.pow(Math.cos(f*i+g),h)+y)));
-			xlist.add(r * Math.cos(i));;
+			xlist.add(r * Math.cos(i));
 			ylist.add(r * Math.sin(i));
 		}
 	 	shared.setXlist(xlist);
